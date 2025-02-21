@@ -1,0 +1,29 @@
+
+name: CI
+on:
+  push:
+    branches:
+      - develop
+jobs:
+  check-host:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Host_Avalilability "https://www.ozon.ru"
+        run: |
+          if curl --output /dev/null --silent --head --fail "https://www.ozon.ru"; then
+            echo "https://www.ozon.ru is reachable"
+            else
+            echo echo "https://www.ozon.ru is not reachable"
+          exit 1
+          fi
+
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Запуск скрипта
+      run: chmod +x Bash-scripts/*.sh
+
+
+
