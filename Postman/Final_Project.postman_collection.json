@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "4a2f2116-33a9-4b2a-bf13-6f5eed989fcf",
+		"name": "Final_Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40152431"
+	},
+	"item": [
+		{
+			"name": "Создать пользователя",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Typjbhjhje\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"username\": \"Maria\",\r\n  \"firstName\": \"mariavesna\",\r\n  \"lastName\": \"Egorova\",\r\n  \"email\": \"mariavesna@yandex.ru\",\r\n  \"password\": \"24071988\",\r\n  \"phone\": \"+79779590057\",\r\n  \"userStatus\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{User_petstore}}/v2/user",
+					"host": [
+						"{{User_petstore}}"
+					],
+					"path": [
+						"v2",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить пользователя",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{User_petstore}}/user/Maria",
+					"host": [
+						"{{User_petstore}}"
+					],
+					"path": [
+						"user",
+						"Maria"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Зарегистрировала в системе",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{User_petstore}}/user/login",
+					"host": [
+						"{{User_petstore}}"
+					],
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Обновить данные",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 9223372036854767070,\r\n    \"username\": \"Maria\",\r\n    \"firstName\": \"mariavesna\",\r\n    \"lastName\": \"Egorovwefwefwf\",\r\n    \"email\": \"mariavesna@yandex.ru\",\r\n    \"password\": \"24071988\",\r\n    \"phone\": \"+79779590057\",\r\n    \"userStatus\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{User_petstore}}/user/Maria",
+					"host": [
+						"{{User_petstore}}"
+					],
+					"path": [
+						"user",
+						"Maria"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удалить пользователя",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{User_petstore}}/user/Maria",
+					"host": [
+						"{{User_petstore}}"
+					],
+					"path": [
+						"user",
+						"Maria"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "variable_key",
+			"value": ""
+		}
+	]
+}
